@@ -15,7 +15,7 @@ namespace DataStructures.Node
             _prev = null;
         }
 
-        protected internal override string Data { get; }
+        protected internal override string Data { get; protected set; }
 
         protected override Node? Next => _next;
         protected override Node? Prev => _prev;
@@ -24,6 +24,12 @@ namespace DataStructures.Node
         public override void SetNextNode(Node? node) => _next = node;
         public override Node? GetPrevNode() => _prev;
         public override void SetPrevNode(Node? node) => _prev = node;
+
+        public void UpdateData(string newData)
+        {
+            Data = newData;
+        }
+
 
         public override string ToString()
         {

@@ -16,8 +16,7 @@ namespace DataStructures.Node
             _next = null;
         }
 
-        protected internal override string Data { get; }
-
+        protected internal override string Data { get; protected set; }
         protected override Node? Next => _next;
         protected override Node? Prev => throw new InvalidOperationException("SingleNode does not have a previous node.");
 
